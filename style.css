@@ -5,7 +5,7 @@
 /* Define Regular Font */
 @font-face {
   font-family: "theSeasonsReg";
-  src: url("../Fonts/Fontspring-DEMO-theseasons-reg.otf") format("opentype");
+  src: url("./Fonts/Fontspring-DEMO-theseasons-reg.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -13,7 +13,7 @@
 /* Define Light Regular Font */
 @font-face {
   font-family: "theSeasonsLtReg";
-  src: url("../Fonts/Fontspring-DEMO-theseasons-lt.otf") format("opentype");
+  src: url("./Fonts/Fontspring-DEMO-theseasons-lt.otf") format("opentype");
   font-weight: lighter;
   font-style: normal;
 }
@@ -44,7 +44,7 @@
 /* Define Bold Font */
 @font-face {
   font-family: "theSeasonsBd";
-  src: url("../Fonts/Fontspring-DEMO-theseasons-bd.otf") format("opentype");
+  src: url("./Fonts/Fontspring-DEMO-theseasons-bd.otf") format("opentype");
   font-weight: bold;
   font-style: normal;
 }
@@ -52,7 +52,7 @@
 /* Define Italic Font */
 @font-face {
   font-family: "theSeasonsIt";
-  src: url("../Fonts/Fontspring-DEMO-theseasons-it.otf") format("opentype");
+  src: url("./Fonts/Fontspring-DEMO-theseasons-it.otf") format("opentype");
   font-weight: normal;
   font-style: italic;
 }
