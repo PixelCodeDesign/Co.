@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import '../media-queries.css';
+
+      /* MODAL WINDOW */
+      .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 90vw;
+        background-color: #f3f3f3;
+        padding: 5rem 6rem;
+        box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        transition: none;
+        overflow: hidden;
+      }
+
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+        z-index: 100;
+        transition: none;
+      }
+
+      .modal__header {
+        font-size: 3rem;
+        margin-bottom: 4.5rem;
+        line-height: 1.1;
+      }
+
+      .modal__header span {
+        font-family: "theSeasonsReg", sans-serif;
+      }
+
+      .modal__form {
+        margin: 0 3rem;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+        gap: 2.5rem;
+        font-family: "ttHovesReg", sans-serif;
+        width: 80%; /* Adjust the width as needed */
+      }
+
+      .modal__service {
+        height: 30px;
+        border: none;
+        border-radius: 6px;
+        font-family: "ttHovesLt", sans-serif;
+      }
+
+      .modal__message {
+        border-radius: 6px;
+        border: none;
+        resize: none;
+      }
+
+      .modal__form label {
+        font-size: 1.7rem;
+        font-weight: 500;
+      }
+
+      .modal__form input {
+        font-size: 1.7rem;
+        padding: 1rem 1.5rem;
+        border: 1px solid #ddd;
+        border-radius: 0.5rem;
+        width: 40vw;
+      }
+
+      .modal__form button {
+        grid-column: 1 / span 2;
+        justify-self: center;
+        margin-top: 1rem;
+      }
+
+      .btn--close-modal {
+        font-family: inherit;
+        color: inherit;
+        position: absolute;
+        top: 0.5rem;
+        right: 2rem;
+        font-size: 4rem;
+        cursor: pointer;
+        border: none;
+        background: none;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .nav__hidden {
+        display: none;
+      }
+
+      .blur {
+        filter: blur(50px); /* Adjust the blur amount as needed */
+        transition: all 0.2s linear;
+      }
+
+      /* Navbar Styles */
+      .navbar {
+        min-height: 4vw;
+        height: 5.2vw;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 4.2vw;
+        font-size: 2.2rem;
+        border-bottom: 1px solid #333;
+      }
+
+      .navbar.sticky {
+        position: fixed;
+        background-color: rgba(255, 255, 255, 0.95);
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--color-primary);
+        font-size: 1.6rem;
+        font-family: "ttHovesReg", sans-serif;
+        font-weight: 500;
+        border: none;
+        padding: 1.25rem 4.5rem;
+        border-radius: 10rem;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .btn:hover {
+        background-color: var(--color-primary-darker);
+      }
+
+      .logo h1 {
+        font-size: 3rem;
+        font-family: "theSeasonsReg";
+        font-weight: 600;
+      }
+
+      .navbar_elements {
+        width: 40%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style: none;
+      }
+
+      .navbar_elements li {
+        font-family: "ttHovesReg", sans-serif;
+        font-weight: 500;
+        font-size: 1.8rem;
+      }
+
+      .navbar_elements li a {
+        text-decoration: none;
+        color: black;
+      }
+
+      .nav__link:link,
+      .nav__link:visited {
+        font-size: 1.7rem;
+        font-weight: 400;
+        color: inherit;
+        text-decoration: none;
+        display: block;
+        transition: all 0.3s;
+      }
+
+      .nav__link--btn:link,
+      .nav__link--btn:visited {
+        padding: 0.8rem 2.5rem;
+        border-radius: 3rem;
+        background-color: var(--color-primary);
+        color: #222;
+      }
+
+      .nav__link--btn:hover,
+      .nav__link--btn:active {
+        color: inherit;
+        background-color: var(--color-primary-darker);
+        color: #333;
+      }
+
+      .nav__menu {
+        font-size: 4rem;
+        display: none;
+      }
+
+      .mobile__nav-close--icon {
+        display: none;
+      }
+
+      .highlight {
+        position: relative;
+      }
+
+      .highlight::after {
+        display: block;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.7;
+        transform: scale(1.07, 1.05) skewX(-15deg);
+        background-image: var(--gradient-primary);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="modal">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header discover__desktop-version">
+        <span>Get in Touch</span>!
+        <br />
+        <span class="highlight blur-target"
+          >We are just a message away from
+        </span>
+        <span class="highlight blur-target">turning ideas into reality</span>
+      </h2>
+      <h2 class="modal__header discover__mobile-version">
+        <span>Get in Touch</span>!
+        <br />
+        <span class="highlight">We are </span>
+        <span class="highlight"> just a </span>
+        <span class="highlight"> message</span>
+        <span class="highlight"> away </span>
+        <span class="highlight">from</span>
+        <span class="highlight">turning</span>
+        <span class="highlight">ideas into </span>
+        <span class="highlight">reality</span>
+      </h2>
+      <form class="modal__form" id="contactForm" action="https://usebasin.com/f/6cabbe7a38e0" method="POST">
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          class="form-element"
+          id="name"
+          name="name"
+          required
+          autocomplete="name"
+        />
+
+        <label for="mobile">Mobile Number:</label>
+        <input
+          type="tel"
+          class="form-element"
+          id="mobile"
+          name="mobile"
+          pattern="[0-9]{10}"
+          required
+        />
+
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          class="form-element"
+          id="email"
+          name="email"
+          required
+          autocomplete="email"
+        />
+
+        <label for="service">Select a Service:</label>
+        <select class="modal__service form-element" name="service" required>
+          <option value="" disabled selected>Select a service</option>
+          <option value="webDevelopment">Web Development</option>
+          <option value="graphicDesign">Graphic Design</option>
+          <option value="videoEditing">Video Editing</option>
+        </select>
+
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          class="form-element"
+          id="name"
+          name="name"
+          required
+        />
+
+        <button type="submit" class="btn form-element">Submit</button>
+      </form>
+    </div>
+    <div class="overlay"></div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"
+    ></script>
+    <!-- <script>
+      const navbar = document.querySelector(".navbar");
+      const sections = document.querySelectorAll(".section");
+      const modal = document.querySelector(".modal");
+      const overlay = document.querySelector(".overlay");
+      const btnCloseModal = document.querySelector(".btn--close-modal");
+      const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
+      const header = document.querySelector(".header");
+      const navMenu = document.querySelector(".menu__icon");
+      const elementsToBlur = document.querySelectorAll(".blur-target");
+      const toggleButton = document.querySelector(".nav__menu");
+
+      toggleButton.addEventListener("click", () => {
+        navbar.classList.add("navbar_elements--visible");
+        elementsToBlur.forEach((element) => {
+          if (
+            !element.classList.contains("form-element") &&
+            window.innerWidth < 1026
+          ) {
+            element.classList.toggle("blur");
+          }
+        });
+      });
+
+      // For close of Navbar visible
+      navbar.addEventListener("click", function () {
+        navbar.classList.remove("navbar_elements--visible");
+        elementsToBlur.forEach((element) => {
+          if (!element.classList.contains("form-element")) {
+            element.classList.remove("blur");
+          }
+        });
+      });
+
+      const openModal = function () {
+        modal.classList.remove("hidden");
+        overlay.classList.remove("hidden");
+      };
+      const closeModal = function () {
+        modal.classList.add("hidden");
+        overlay.classList.add("hidden");
+      };
+
+      for (let i = 0; i < btnsOpenModal.length; i++)
+        btnsOpenModal[i].addEventListener("click", openModal);
+
+      btnCloseModal.addEventListener("click", closeModal);
+      overlay.addEventListener("click", closeModal);
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+          closeModal();
+        }
+      });
+    </script> -->
+  </body>
+</html>

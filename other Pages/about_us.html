@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixel CodeDesign</title>
+    <style>
+      @import "../style.css";
+
+      body {
+        font-family: 'ttHovesLIt', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #dce6f0;
+        color: #333;
+      }
+
+      header {
+        background-color: #5ec576;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+      }
+
+      section {
+        margin: 20px;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+
+      h1 {
+        font-size: 3rem;
+        padding: 3.2rem 4rem;
+      }
+
+      h1 span {
+        font-family: "theSeasonsReg";
+      }
+
+      h2 {
+        color: #5ec576;
+        font-family: "theSeasonsReg";
+        font-size: 2.6rem;
+      }
+
+      p {
+        color: #555;
+        font-size: 1.8rem;
+        line-height: 2rem;
+        margin: 1.2rem 1.6rem;     
+      }
+
+      .section__questions {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        line-height: 2rem;
+        margin: 1.2rem 2rem;      
+      }
+
+      .team-members {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+
+      .team-member {
+        text-align: center;
+        padding: 10px;
+      }
+
+      .team__member-name{
+            font-size: 2.6rem;
+            font-family: 'ttHovesReg', sans-serif;
+            font-weight: 200;
+      }
+
+      .team__member-role{
+            font-size: 2.2rem;
+            line-height: 3rem;
+            font-family: 'ttHovesLt', sans-serif;
+      }
+
+      .team__member-role span{
+            font-family: 'ttHovesReg', sans-serif;
+      }
+
+      .section__services{
+            padding: 2rem;
+            font-size: 2.4rem;
+            line-height: 3.4rem;
+            width: calc(100% - 4rem);
+      }
+
+      .services {
+        display: flex;
+        justify-content: space-around;
+        margin: 2rem 0.8rem;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      .service {
+        text-align: center;
+        width: 100%;
+        padding: 1.4rem 2rem;
+        background-color: #eee;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        flex: 1;
+        margin: 10px;
+      }
+
+      .services__title{
+            font-size: 2.6rem;
+            padding: 0.4rem;
+      }
+
+      .services__description{
+            margin-top: 2rem;
+            font-size: 2.4rem;
+            line-height: 3.2rem;
+            font-family: 'ttHovesReg', sans-serif;
+      }
+
+      .thankyou__msg{
+            font-size: 3.2rem;
+            padding: 2rem;
+      }
+
+      
+      
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <span>Welcome to Pixel CodeDesign</span> -
+        <span>Where Creativity Meets Innovation</span>!
+      </h1>
+    </header>
+
+    <section>
+      <h2>Our Story</h2>
+      <p>
+        Pixel CodeDesign was founded with a passion for bringing creative
+        visions to life through web development, graphic design, and video
+        editing. Established in 2024, we have since been on a mission to deliver
+        high-quality solutions that not only meet but exceed the expectations of
+        our clients.
+      </p>
+    </section>
+
+    <section>
+      <h2>Our Mission</h2>
+      <p>
+        At Pixel CodeDesign, our mission is to blend artistic expression with
+        cutting-edge technology to deliver exceptional digital experiences. We
+        strive to empower businesses and individuals through our expertise in
+        web development, graphic design, and video editing, helping them stand
+        out in the digital landscape.
+      </p>
+    </section>
+
+    <section>
+      <h2>Why Choose Us?</h2>
+      <ul class="section__questions">
+        <li>
+          Creative Excellence: Ours team of talented professionals is dedicated
+          to pushing creative boundaries and delivering visually stunning and
+          functionally superior solutions.
+        </li>
+        <li>
+          Innovation at Core: We stay at the forefront of technological
+          advancements, ensuring that our clients benefit from the latest tools
+          and trends in the digital realm.
+        </li>
+        <li>
+          Client-Centric Approach: Your satisfaction is our priority. We work
+          closely with our clients, understanding their unique needs and
+          providing personalized solutions that drive success.
+        </li>
+        <li>
+          Reliability and Trust: We believe in transparency, reliability, and
+          building trust with our clients. Our commitment is to deliver on time
+          and within budget, every time.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Meet Our Team</h2>
+      <div class="team-members">
+        <div class="team-member">
+          <h3 class="team__member-name">Yuvraj Designer</h3>
+          <p class="team__member-role"><span>Role:</span>Graphic Designer, Video Editor</p>
+          <p class="team__memeber-location"><span>Location</span> North Delhi</p>
+        </div>
+        <div class="team-member">
+          <h3 class="team__member-name">Chitranshu</h3>
+          <p class="team__member-role"><span>Role:</span> Web Developer, Website Design</p>
+          <p class="team__memeber-location"><span>Location</span> Rajasthan</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__services">
+      <h2>Our Services</h2>
+      <div class="services">
+        <div class="service">
+          <h3 class="services__title">Web Development</h3>
+          <p class="services__description">
+            Crafted with precision and functionality to enhance your online
+            presence.
+          </p>
+        </div>
+        <div class="service">
+          <h3 class="services__title">Graphic Design</h3>
+          <p class="services__description">From branding to stunning visuals, we bring your ideas to life.</p>
+        </div>
+        <div class="service">
+          <h3 class="services__title">Video Editing</h3>
+          <p class="services__description">Transforming raw footage into captivating visual stories.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Join Us in the Creative Journey</h2>
+      <p>
+        Whether you're a business seeking digital transformation or an
+        individual with a creative vision, we invite you to join us in the
+        exciting journey of innovation and artistic expression. Let's create
+        something extraordinary together!
+      </p>
+    </section>
+
+    <section>
+      <h2 class="thankyou__msg">
+        Thank you for considering Pixel CodeDesign for your digital needs.
+      </h2>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,967 @@
+/* importing media queries File */
+
+@import './media-queries.css';
+
+/* Define Regular Font */
+@font-face {
+  font-family: "theSeasonsReg";
+  src: url("../Fonts/Fontspring-DEMO-theseasons-reg.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Define Light Regular Font */
+@font-face {
+  font-family: "theSeasonsLtReg";
+  src: url("../Fonts/Fontspring-DEMO-theseasons-lt.otf") format("opentype");
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ttHovesReg";
+  src: url("./Fonts/tt-hoves/TT\ Hoves\ Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ttHovesLt";
+  src: url("./Fonts/tt-hoves/TT\ Hoves\ Pro\ Trial\ Light.ttf")
+    format("opentype");
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ttHovesLIt";
+  src: url("./Fonts/tt-hoves/TT\ Hoves\ Pro\ Trial\ Light\ Italic.ttf")
+    format("opentype");
+  font-weight: lighter;
+  font-style: italic;
+}
+
+/* Define Bold Font */
+@font-face {
+  font-family: "theSeasonsBd";
+  src: url("../Fonts/Fontspring-DEMO-theseasons-bd.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Define Italic Font */
+@font-face {
+  font-family: "theSeasonsIt";
+  src: url("../Fonts/Fontspring-DEMO-theseasons-it.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Add more @font-face rules for other variations if needed */
+
+:root {
+  --color-background-secondary: #dce6f0;
+  --color-primary: #5ec576;
+  --color-secondary: #ffcb03;
+  --color-tertiary: #ff585f;
+  --color-primary-darker: #4bbb7d;
+  --color-secondary-darker: #ffbb00;
+  --color-tertiary-darker: #fd424b;
+  --color-primary-opacity: #5ec5763a;
+  --color-secondary-opacity: #ffcd0331;
+  --color-tertiary-opacity: #ff58602d;
+  --gradient-primary: linear-gradient(to top left, #39b385, #9be15d);
+  --gradient-secondary: linear-gradient(to top left, #ffb003, #ffcb03);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /* border: 1px solid red !important; */
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--color-background-secondary);
+  overflow-x: hidden;
+}
+
+.nav__hidden{
+  display: none;
+}
+
+.blur {
+  filter: blur(50px); /* Adjust the blur amount as needed */
+  transition: all 0.2s linear;
+}
+
+/* Navbar Styles */
+.navbar {
+  min-height: 4vw;
+  height: 5.2vw;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4.2vw;
+  font-size: 2.2rem;
+  border-bottom: 1px solid #333;
+}
+
+.navbar.sticky {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--color-primary);
+  font-size: 1.6rem;
+  font-family: 'ttHovesReg', sans-serif;
+  font-weight: 500;
+  border: none;
+  padding: 1.25rem 4.5rem;
+  border-radius: 10rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--color-primary-darker);
+}
+
+.logo h1{
+  font-size: 3rem;
+  font-family: "theSeasonsReg";
+  font-weight: 600;
+}
+
+.navbar_elements {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.navbar_elements li {
+  font-family: "ttHovesReg", sans-serif;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.navbar_elements li a {
+  text-decoration: none;
+  color: black;
+}
+
+
+.nav__link:link,
+.nav__link:visited {
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s;
+}
+
+.nav__link--btn:link,
+.nav__link--btn:visited {
+  padding: 0.8rem 2.5rem;
+  border-radius: 3rem;
+  background-color: var(--color-primary);
+  color: #222;
+}
+
+.nav__link--btn:hover,
+.nav__link--btn:active {
+  color: inherit;
+  background-color: var(--color-primary-darker);
+  color: #333;
+}
+
+.nav__menu{
+  font-size: 4rem;
+  display: none;
+}
+
+.mobile__nav-close--icon{
+  display: none;
+}
+
+/* navbar icon style */
+
+/* .material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  font-size: 5.2rem;
+}
+
+.dropdown__navbar{
+  position: relative;
+}
+
+.dropdown__navbar .navbar_elements{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  background-color: transparent;
+  color: #fff;
+  width: 40vw;
+  border-radius: 2rem;
+  font-size: 4rem;
+  height: auto;
+  padding: 4rem 0 4rem 0;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown__navbar .navbar_elements .btn{
+    display: inline-block;
+    background-color: var(--color-primary);
+    font-size: 1.6rem;
+    font-family: 'ttHovesReg', sans-serif;
+    font-weight: 500;
+    border: none;
+    padding: 1.25rem 4.5rem;
+    border-radius: 10rem;
+    cursor: pointer;
+    transition: all 0.3s;
+} */
+
+.header__title {
+  height: calc(100vh - 4.2vh);
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 8.2rem;
+  padding-bottom: 1.6rem;
+  background-color: #dce6f0;
+}
+
+.header__title-text {
+  min-width: 30vw;
+  width: 40%;
+  height: 100%;
+  padding-top: 8.2vw;
+  font-size: 4rem;
+  padding-bottom: 1.4rem;
+}
+
+.header__big-txt {
+  width: 90%;
+  font-size: 7.6rem;
+  font-family: "theSeasonsReg";
+  line-height: 8.9rem;
+  padding-bottom: 0.8rem;
+}
+
+.header__small-txt {
+  font-family: "theSeasonsLtReg";
+  padding-top: 20vw;
+  width: 100%;
+  font-size: 4.2rem;
+  line-height: 5.2rem;
+}
+
+.header__title-image {
+  width: 20%;
+  height: 100%;
+}
+
+.header__image {
+  width: 100%;
+  height: 100%;
+}
+
+.circular-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.btn--text {
+  padding-top: 0.2rem;
+  padding-left: 0.4rem;
+  font-size: 1.6rem;
+  color: #008080;
+  border: none;
+  background-color: #dce6f0;
+  text-decoration: underline;
+  font-family: "ttHovesReg", sans-serif;
+}
+
+/* TypeWriter styles */
+.typewriter-text {
+  white-space: nowrap;
+  font-size: 24px;
+  margin: 0 auto;
+  display: inline-block;
+  padding: 10px;
+}
+
+#constantText {
+  font-family: "ttHovesLt", sans-serif;
+}
+
+.typewriter__changing-text{
+  font-family: 'ttHovesLt', sans-serif;
+}
+
+.cursor {
+  border-right: 2px solid #3498db; /* Example color, customize as needed */
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.section {
+  padding: 0rem 1rem;
+  border-top: 1px solid #ddd;
+  margin: 8rem auto 0rem auto;
+  transition: transform 1s, opacity 1s;
+}
+
+.section--hidden {
+  opacity: 1;
+  transform: translateY(8rem);
+}
+
+.section__title {
+  max-width: 100rem;
+  margin: 0 auto 4rem auto;
+}
+
+.section__description {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.section__header {
+  font-size: 4rem;
+  line-height: 1.3;
+  font-weight: 500;
+  width: 100%;
+}
+
+.border__line {
+  margin-top: 4rem;
+  width: 100vw;
+  border-top: 1px solid #000;
+}
+
+.discover {
+  max-width: 116rem;
+  margin: 8rem auto 8rem auto;
+  /* width: 100%; */
+  font-family: "ttHovesReg", sans-serif;
+  height: auto;
+  /* font-size: 2.4rem; */
+  color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+}
+
+.discover__heading-text {
+  width: 100%;
+
+  color: var(--color-primary);
+  font-size: 3rem;
+  line-height: 4.4rem;
+  font-family: "theSeasonsBd";
+  margin-bottom: 2rem;
+}
+
+.discover__main-text {
+  text-align: center;
+  width: 90%;
+  font-family: "ttHovesLIt", sans-serif;
+  line-height: 4rem;
+  font-size: 2.4rem;
+}
+
+.discover__mobile-version{
+  display: none;
+}
+
+.highlight {
+  position: relative;
+}
+
+.highlight::after {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.7;
+  transform: scale(1.07, 1.05) skewX(-15deg);
+  background-image: var(--gradient-primary);
+}
+
+.services__description {
+  font-family: "theSeasonsBd", sans-serif;
+  /* margin: 20rem 0rem 0 0; */
+  margin: 12rem auto 0 auto;
+  font-size: 3rem;
+}
+
+.services__header {
+  width: 80vw;
+  font-size: 2.2rem;
+  font-family: "ttHovesLIt", sans-serif;
+}
+
+/* services */
+.services {
+  /* font-family: 'ttHovesReg', sans-serif; */
+  max-width: 100rem;
+  margin: 8rem auto 0 auto;
+  background-color: #fff;
+}
+
+.services__tab-container {
+  display: flex;
+  justify-content: center;
+}
+
+.services__tab {
+  margin-right: 2.5rem;
+  transform: translateY(-50%);
+  font-size: 1.6rem;
+  font-family: "ttHovesReg", sans-serif;
+}
+
+.services__tab span {
+  margin-right: 1rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.services__tab--1 {
+  background-color: var(--color-secondary);
+}
+
+.services__tab--1:hover {
+  background-color: var(--color-secondary-darker);
+}
+
+.services__tab--3 {
+  background-color: var(--color-tertiary);
+  margin: 0;
+}
+
+.services__tab--3:hover {
+  background-color: var(--color-tertiary-darker);
+}
+
+.services__tab--active {
+  transform: translateY(-66%);
+}
+
+.services__main-text {
+  font-size: 1.8rem;
+  font-family: "ttHovesLIt", sans-serif;
+}
+
+.services__content {
+  display: none;
+  font-family: "ttHovesReg", sans-serif;
+  /* JUST PRESENTATIONAL */
+  font-size: 1.7rem;
+  padding: 2.5rem 7rem 6.5rem 7rem;
+}
+
+.services__content--active {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  column-gap: 3rem;
+  row-gap: 0.5rem;
+}
+
+.services__header {
+  font-size: 2.6rem;
+  font-weight: 400;
+  margin: 2rem 0 2rem 0;
+  width: 100%;
+  align-self: center;
+}
+
+.services__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+}
+
+.icon img {
+  height: 6rem;
+  width: 6rem;
+}
+
+.icon__small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: perspective(20px) translateZ(-4px);
+}
+
+.services__content p {
+  grid-column: 2;
+  font-size: 1.8rem;
+  font-weight: 500;
+  font-family: "ttHovesLIt", sans-serif;
+}
+
+.services__icon--1 {
+  background-color: var(--color-secondary-opacity);
+}
+.services__icon--2 {
+  background-color: var(--color-primary-opacity);
+}
+.services__icon--3 {
+  background-color: var(--color-tertiary-opacity);
+}
+.services__icon--1 svg {
+  fill: var(--color-secondary-darker);
+}
+.services__icon--2 svg {
+  fill: var(--color-primary);
+}
+.services__icon--3 svg {
+  fill: var(--color-tertiary);
+}
+
+/* Section--3 (Technologies) */
+
+.tech__header-container {
+  font-size: 3rem;
+  max-width: calc(100vw - 18.2rem);
+  max-height: 50vh;
+  margin: 8.2rem 0 0 0;
+  margin-left: 18.2rem;
+}
+
+.tech__header {
+  font-size: 3rem;
+  font-family: "theSeasonsBd";
+  color: var(--color-primary);
+}
+
+.tech__main-text {
+  font-size: 3.2rem;
+  font-family: "ttHovesLIt", sans-serif;
+}
+
+.icons__container {
+  display: none;
+  margin: 2rem 0;
+  position: relative;
+  height: 20vh;
+  gap: 4.6rem;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  animation: moveRightToLeft 20s linear infinite;
+}
+
+
+/* animation: moveRightToLeft 5s linear infinite; Adjust the duration as needed */
+@keyframes moveRightToLeft {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%; /* Move back to the right side */
+  }
+}
+
+/* SLIDER */
+.slider {
+  max-width: 100rem;
+  height: 40vh;
+  /* max-height: 60vh; */
+  margin: 0 auto;
+  position: relative;
+  overflow-x: hidden;
+  /* IN THE END */
+}
+
+.review__title-description{
+  font-size: 3rem;
+  color: var(--color-primary);
+  line-height: 3.6rem;
+  font-family: 'ttHovesReg', sans-serif;
+}
+
+.review__title-header{
+  font-size: 2.4rem;
+  font-family: 'ttHovesLt', sans-serif;
+  margin: 2rem 0 0 0;
+}
+
+.double-quote{
+  height: 5.4rem;
+  margin-right: 0.4rem;
+
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* THIS creates the animation! */
+  transition: transform 1s;
+  overflow-x: hidden;
+}
+
+.slide > img {
+  /* Only for images that have different size than slide */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider__btn {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+
+  border: none;
+  background: rgba(255, 255, 255, 0.7);
+  font-family: inherit;
+  color: #333;
+  border-radius: 50%;
+  height: 5.5rem;
+  width: 5.5rem;
+  font-size: 3.25rem;
+  cursor: pointer;
+}
+
+.slider__btn--left {
+  left: 6%;
+  transform: translate(-50%, -50%);
+}
+
+.slider__btn--right {
+  right: 6%;
+  transform: translate(50%, -50%);
+}
+
+.dots {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.dots__dot {
+  border: none;
+  background-color: #b9b9b9;
+  opacity: 0.7;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  margin-right: 1.75rem;
+  cursor: pointer;
+  transition: all 0.5s;
+
+  /* Only necessary when overlying images */
+  /* box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.7); */
+}
+
+.dots__dot:last-child {
+  margin: 0;
+}
+
+.dots__dot--active {
+  background-color: #fff;
+  background-color: #888;
+  opacity: 1;
+}
+
+/* TESTIMONIALS */
+.testimonial {
+  width: 65%;
+  position: relative;
+}
+
+.testimonial::before {
+  position: absolute;
+  top: -5.7rem;
+  left: -6.8rem;
+  line-height: 1;
+  font-size: 12rem;
+  font-family: inherit;
+  color: var(--color-primary);
+  z-index: -1;
+}
+
+.testimonial__header {
+  font-size: 2.6rem;
+  font-weight: 200;
+  font-family: 'ttHovesReg', sans-serif;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial__text {
+  font-size: 2rem;
+  font-family: 'ttHovesLIt', sans-serif;
+  margin-bottom: 3.5rem;
+  color: #666;
+}
+
+.testimonial__author {
+  margin-left: 3rem;
+  font-style: normal;
+
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  column-gap: 2rem;
+}
+
+.testimonial__photo {
+  grid-row: 1 / span 2;
+  width: 6.5rem;
+  border-radius: 50%;
+}
+
+.testimonial__name {
+  font-size: 1.6rem;
+  font-weight: 500;
+  align-self: end;
+  font-family: 'ttHovesReg', sans-serif;
+  margin: 0;
+}
+
+.testimonial__location {
+  font-size: 1.4rem;
+  font-family: 'ttHovesReg', sans-serif;
+}
+
+.section__title--testimonials {
+  margin-bottom: 4rem;
+}
+
+.section__title--testimonials h2{
+  font-size: 3.6rem;
+  font-family: 'theSeasonsBd', sans-serif;
+}
+
+/* SIGNUP */
+.section--sign-up {
+  padding-top: 12rem;
+  background-color: #37383d;
+  border-top: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #444;
+  text-align: center;
+}
+
+
+
+.section--sign-up .section__header {
+  color: #fff;
+  text-align: center;
+}
+
+
+.signup__main-text {
+  margin-bottom: 6rem;
+  font-family: 'theSeasonsReg', sans-serif;
+}
+
+.section--sign-up .btn {
+  font-size: 1.9rem;
+  padding: 2rem 5rem;
+}
+
+/* FOOTER */
+.footer {
+  padding: 10rem 3rem;
+  background-color: #37383d;
+  font-family: 'ttHovesReg', sans-serif;
+}
+
+.footer__nav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+.footer__item {
+  margin-right: 4rem;
+}
+
+.footer__link {
+  font-size: 1.6rem;
+  color: #eee;
+  text-decoration: none;
+}
+
+.footer__logo {
+  height: 5rem;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+}
+
+.footer__copyright {
+  font-size: 1.4rem;
+  color: #aaa;
+  text-align: center;
+}
+
+.footer__copyright .footer__link {
+  font-size: 1.4rem;
+}
+
+/* MODAL WINDOW */
+/* MODAL WINDOW */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90vw;
+  background-color: #f3f3f3;
+  padding: 5rem 6rem;
+  box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: none;
+  overflow: hidden;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  transition: none;
+}
+
+.modal__header {
+  font-size: 3rem;
+  margin-bottom: 4.5rem;
+  line-height: 1.1;
+}
+
+.modal__header span {
+  font-family: "theSeasonsReg", sans-serif;
+}
+
+.modal__form {
+  margin: 0 3rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 2.5rem;
+  font-family: "ttHovesReg", sans-serif;
+  width: 80%; /* Adjust the width as needed */
+}
+
+.modal__service {
+  height: 30px;
+  border: none;
+  border-radius: 6px;
+  font-family: "ttHovesLt", sans-serif;
+}
+
+.modal__message {
+  border-radius: 6px;
+  border: none;
+  resize: none;
+}
+
+.modal__form label {
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.modal__form input {
+  font-size: 1.7rem;
+  padding: 1rem 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  width: 40vw;
+}
+
+.modal__form button {
+  grid-column: 1 / span 2;
+  justify-self: center;
+  margin-top: 1rem;
+}
+
+.btn--close-modal {
+  font-family: inherit;
+  color: inherit;
+  position: absolute;
+  top: 0.5rem;
+  right: 2rem;
+  font-size: 4rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.nav__hidden {
+  display: none;
+}
+
+.blur {
+  filter: blur(50px); /* Adjust the blur amount as needed */
+  transition: all 0.2s linear;
+}
+
+
+
+/* COOKIE MESSAGE */
+.cookie-message {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  background-color: white;
+  color: #bbb;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+

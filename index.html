@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="media-queries.css" />
+    <script type="module" defer src="./main.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <!-- Navbar structure -->
+      <nav class="navbar">
+        <div class="logo"><h1>Pixel CodeDesign</h1></div>
+
+        <ul class="navbar_elements">
+          <li><a class="nav__link" href="#section--1">Home</a></li>
+          <li><a class="nav__link" href="#section--2">Services</a></li>
+          <li><a class="nav__link" href="#section--4">About Us</a></li>
+          <li>
+            <button id="goToWebsiteButton" class="btn btn--show-modal">Contact Us</button>
+          </li>
+        </ul>
+        <div class="nav__menu">
+          <ion-icon name="menu" class="mobile__nav-icon"></ion-icon>
+          <ion-icon
+            name="close"
+            class="mobile__nav-icon mobile__nav-close--icon"
+          ></ion-icon>
+        </div>
+      </nav>
+
+      <!-- <div class="dropdown__navbar">
+        <ul class="navbar_elements">
+          <li><a class="nav__link" href="#section--1">Home</a></li>
+          <li><a class="nav__link" href="#section--2">Services</a></li>
+          <li><a class="nav__link" href="#section--4">About Us</a></li>
+          <li>
+            <a href="#contact"
+              ><button class="btn btn--show-modal">Contact Us</button></a
+            >
+          </li>
+        </ul>
+      </div> -->
+
+      <!-- Hero Section structure -->
+      <div class="header__title">
+        <div class="header__title-text">
+          <p class="header__big-txt">Dream Design, Code Wonders.</p>
+          <span class="header__small-txt">Unleash Your Digital Creativity</span>
+          <span>!</span>
+          <button class="btn--text btn--scroll-to">
+            Learn more &DownArrow;
+          </button>
+        </div>
+        <div class="circular-image">
+          <img
+            src="./3d Elements/selected/program-coding-cartoon-style-vector-concept-illustration_92926-1733.avif"
+            alt=""
+          />
+        </div>
+        <!-- <div class="header__title-image">
+                  <img class="header__image" src="" alt="code image">
+            </div> -->
+      </div>
+    </header>
+    <div class="border__line"></div>
+    <main>
+      <section id="section--1" class="section">
+        <div class="discover">
+          <div class="discover__heading-text">Discover Excellence</div>
+          <div class="discover__main-text discover__desktop-version">
+            Elevate your digital presence with our comprehensive Services. From
+            seamless
+            <span class="highlight blur-target"> web experiences</span> to
+            captivating
+            <span class="highlight blur-target">brand design</span> and
+            cinematic storytelling through
+            <span class="highlight blur-target">video editing</span>, we bring
+            visions to life.
+            <span class="highlight blur-target"
+              >Your journey to excellence begins here</span
+            >
+          </div>
+          <div class="discover__main-text discover__mobile-version">
+            Elevate your digital presence with our comprehensive Services. From
+            seamless
+            <span class="highlight blur-target"> web</span>
+            <span class="highlight blur-target"> experiences </span> to
+            captivating <span class="highlight blur-target">brand</span>
+            <span class="highlight blur-target"> design</span>and cinematic
+            storytelling through <span class="highlight blur-target">video</span
+            ><span class="highlight blur-target"> editing</span>, we bring
+            visions to life.
+            <span class="highlight blur-target">Your </span>
+            <span class="highlight blur-target">journey</span>
+            <span class="highlight blur-target">to</span>
+            <span class="highlight blur-target"> excellence</span
+            ><span class="highlight blur-target">begins </span>
+            <span class="highlight blur-target">here</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="section--2" class="section">
+        <div class="section__title">
+          <h2 class="section__description services__description">Services</h2>
+          <h3 class="section__header services__header">
+            Crafting Digital Excellence: Web Development, Graphic Design and
+            Video Editing.
+          </h3>
+        </div>
+
+        <div class="services">
+          <div class="services__tab-container">
+            <button
+              class="btn services__tab services__tab--1 blur-target"
+              data-tab="1"
+            >
+              <span>01</span>Web Development
+            </button>
+            <button
+              class="btn services__tab services__tab--2 blur-target"
+              data-tab="2"
+            >
+              <span>02</span>Graphic Design
+            </button>
+            <button
+              class="btn services__tab services__tab--3 blur-target"
+              data-tab="3"
+            >
+              <span>03</span>Video Editing
+            </button>
+          </div>
+          <div
+            class="services__content services__content--1 services__content--active"
+          >
+            <div class="services__icon services__icon--1">
+              <div class="icon">
+                <img
+                  src="./3d Elements/Icons/web-developer.png"
+                  alt="web devlopment logo"
+                />
+              </div>
+            </div>
+            <h5 class="services__header">
+              Create dynamic websites and applications with expert web
+              development discover.
+            </h5>
+            <p class="services__main-text">
+              Elevate your online presence with our cutting-edge solutions
+              tailored to your vision.
+            </p>
+          </div>
+
+          <div class="services__content services__content--2">
+            <div class="services__icon services__icon--2">
+              <div class="icon icon__small">
+                <img
+                  src="./3d Elements/Icons/graphic-design.png"
+                  alt="graphic-design logo"
+                />
+              </div>
+            </div>
+            <h5 class="services__header">
+              Design brilliance: crafting visual identities for impactful
+              brands.
+            </h5>
+            <p>
+              Elevate your brand with captivating graphic design that leaves a
+              lasting impression.
+            </p>
+          </div>
+          <div class="services__content services__content--3">
+            <div class="services__icon services__icon--3">
+              <div class="icon icon__small">
+                <img
+                  src="./3d Elements/Icons/video-editing.png"
+                  alt="video-editing logo"
+                />
+              </div>
+            </div>
+            <h5 class="services__header">
+              Cinematic excellence: transforming stories through video editing.
+            </h5>
+            <p>
+              Immerse your audience in captivating visual narratives with our
+              video editing expertise.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="border__line"></div>
+
+      <section class="section tech__section" id="section--3">
+        <div class="tech__header-container">
+          <div class="section__header tech__header">Modern Tools</div>
+          <div class="section__main-text tech__main-txt">
+            <div class="typewriter-text" id="typewriter">
+              <span id="constantText">We provide services like</span
+              ><span class="cursor"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="section__content tech__content">
+          <div class="icons__container">
+            <img
+              src="./3d Elements/Technologies Icon/icons8-adobe-illustrator-90.png"
+              alt="adobe-illustrator"
+              class="image blur-target"
+            />
+            <img
+              src="./3d Elements/Technologies Icon/icons8-adobe-indesign-96.png"
+              alt="adobe-indesign"
+              class="image blur-target"
+            />
+            <img
+              src="./3d Elements/Technologies Icon/icons8-adobe-photoshop-96.png"
+              alt="adobe-photoshop"
+              class="image blur-target"
+            />
+            <img
+              src="./3d Elements/Technologies Icon/icons8-bootstrap-96.png"
+              alt="bootstrap"
+              class="image blur-target"
+            />
+            <img
+              src="./3d Elements/Technologies Icon/icons8-canva-96.png"
+              alt="canva"
+              class="image blur-target"
+            />
+            <img
+              src="./3d Elements/Technologies Icon/icons8-coreldraw-100.png"
+              alt="coreldraw"
+              class="image blur-target"
+            />
+            <img
+              src="./3d Elements/Technologies Icon/icons8-css-96.png"
+              alt="css"
+              class="image blur-target"
+            />
+            <img
+              src="./3d Elements/Technologies Icon/icons8-html-96.png"
+              alt="html"
+              class="image blur-target"
+            />
+            <img
+              src="./3d Elements/Technologies Icon/icons8-js-96.png"
+              alt="js"
+              class="image blur-target"
+            />
+            <img
+              src="./3d Elements/Technologies Icon/icons8-nodejs-96.png"
+              alt="nodejs"
+              class="image blur-target"
+            />
+            <img
+              src="./3d Elements/Technologies Icon/icons8-react-native-96.png"
+              alt="react-native"
+              class="image blur-target"
+            />
+            <img
+              src="./3d Elements/Technologies Icon/icons8-sass-96.png"
+              alt="sass"
+              class="image blur-target"
+            />
+            <img
+              src="./3d Elements/Technologies Icon/icons8-tailwind-css-96.png"
+              alt="sass"
+              class="image blur-target"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="section--3">
+        <div class="section__title section__title--testimonials">
+          <h2 class="section__description review__title-description">
+            Not sure yet?
+          </h2>
+          <h3 class="section__header review__title-header">
+            "Dive into a world of wow! Choose our agency's spellbinding web
+            development, graphic design, and video editing—<span
+              class="highlight blur-target discover__desktop-version"
+              >where precision and innovation collide</span
+            >, sculpting an unforgettable digital spectacle."
+          </h3>
+        </div>
+        <span class="highlight blur-target"></span>
+
+        <div class="slider blur-target">
+          <div class="slide slide--1 blur-target">
+            <div class="testimonial">
+              <h5 class="testimonial__header">
+                <img
+                  src="./3d Elements/Icons/double-quote.png"
+                  class="double-quote"
+                  alt="double-quote"
+                />Digital Transformation Marvel
+              </h5>
+              <blockquote class="testimonial__text">
+                Revolutionizing our online presence, the web development team
+                orchestrated a digital transformation marvel. Their commitment
+                to innovation and user-friendly design made navigating our site
+                a breeze.
+              </blockquote>
+              <address class="testimonial__author">
+                <img
+                  src="./3d Elements/user image/user-1.jpg"
+                  alt=""
+                  class="testimonial__photo"
+                />
+                <h6 class="testimonial__name">Aarav Lynn</h6>
+                <p class="testimonial__location">San Francisco, USA</p>
+              </address>
+            </div>
+          </div>
+
+          <div class="slide slide--2 blur-target">
+            <div class="testimonial">
+              <h5 class="testimonial__header">
+                <img
+                  src="./3d Elements/Icons/double-quote.png"
+                  class="double-quote"
+                  alt="double-quote"
+                />Web Excellence Unleashed
+              </h5>
+              <blockquote class="testimonial__text">
+                The web development team delivered excellence! Their dedication
+                to detail and modern solutions transformed our website into a
+                powerhouse of user engagement. Truly exceptional service.
+              </blockquote>
+              <address class="testimonial__author">
+                <img
+                  src="./3d Elements/user image/user-2.jpg"
+                  alt=""
+                  class="testimonial__photo"
+                />
+                <h6 class="testimonial__name">Miyah Miles</h6>
+                <p class="testimonial__location">London, UK</p>
+              </address>
+            </div>
+          </div>
+
+          <div class="slide slide--3 blur-target">
+            <div class="testimonial">
+              <h5 class="testimonial__header">
+                <img
+                  src="./3d Elements/Icons/double-quote.png"
+                  class="double-quote"
+                  alt="double-quote"
+                />
+                Visual Renaissance
+              </h5>
+              <blockquote class="testimonial__text">
+                Embarking on a visual renaissance, the graphic design team
+                elevated our brand. Their creative prowess breathed life into
+                our identity, making it visually stunning and memorable for our
+                audience.
+              </blockquote>
+              <address class="testimonial__author">
+                <img
+                  src="./3d Elements/user image/user-3.jpg"
+                  alt=""
+                  class="testimonial__photo"
+                />
+                <h6 class="testimonial__name">Francisco Gomes</h6>
+                <p class="testimonial__location">Lisbon, Portugal</p>
+              </address>
+            </div>
+          </div>
+
+          <button class="slider__btn slider__btn--left">&larr;</button>
+          <button class="slider__btn slider__btn--right">&rarr;</button>
+          <div class="dots"></div>
+        </div>
+      </section>
+    </main>
+
+    <section id="section--4" class="section section--sign-up">
+      <div class="section__title">
+        <div class="section__header">
+          <span class="signup__main-text"
+            >The best day to join us was one year ago. The second best is
+            today</span
+          >
+          <span>!</span>
+        </div>
+      </div>
+      <button class="btn btn--show-modal" id="goToWebsiteButtonlast" >Contact Us</button>
+    </section>
+
+    <footer id="section--last" class="footer">
+      <ul class="footer__nav">
+        <li class="footer__item">
+          <a class="footer__link" href="./other Pages/about_us.html"
+            >About us</a
+          >
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="./other Pages/privacy_policy.html"
+            >Terms of Use</a
+          >
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="./other Pages/privacy_policy.html"
+            >Privacy Policy</a
+          >
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#section--2">Services</a>
+        </li>
+      </ul>
+      <p class="footer__copyright">
+        &copy; Copyright by
+        <a class="footer__link twitter-link" target="_blank" href=""
+          >Pixel CodeDesign</a
+        >
+      </p>
+    </footer>
+
+    <div class="modal hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">
+        <span>Get in Touch</span>!
+        <br />
+        <span class="highlight blur-target"
+          >We are just a message away from
+        </span>
+        <span class="highlight blur-target">turning ideas into reality</span>
+      </h2>
+      <form class="modal__form" id="contactForm">
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          class="form-element"
+          id="name"
+          name="name"
+          required
+          autocomplete="name"
+        />
+
+        <label for="mobile">Mobile Number:</label>
+        <input
+          type="tel"
+          class="form-element"
+          id="mobile"
+          name="mobile"
+          pattern="[0-9]{10}"
+          required
+        />
+
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          class="form-element"
+          id="email"
+          name="email"
+          required
+          autocomplete="email"
+        />
+
+        <label for="service">Select a Service:</label>
+        <select class="modal__service form-element" name="service" required>
+          <option value="" disabled selected>Select a service</option>
+          <option value="webDevelopment">Web Development</option>
+          <option value="graphicDesign">Graphic Design</option>
+          <option value="videoEditing">Video Editing</option>
+        </select>
+
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          class="form-element"
+          id="name"
+          name="name"
+          required
+        /> 
+
+        <button type="submit" class="btn form-element">Submit</button>
+      </form>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
